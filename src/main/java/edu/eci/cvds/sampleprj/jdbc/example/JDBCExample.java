@@ -135,18 +135,20 @@ public class JDBCExample {
         
         //Crear prepared statement
         PreparedStatement totalValue = null;
+        PreparedStatement totalQuantity = null;
+
         String consulta = "select nombre from ORD_PRODUCTOS where codigo = ? ";
         String consulta2 = null;
         consulta2= "select ORD_DETALLES_PEDIDO.cantidad from ORD_DETALLES_PEDIDO inner join ODR_PRODUCTOS where codigo= ? ";
         //asignar parámetros
         totalValue.setInt(codigoPedido,codigo);
+        
         //usar executeQuery
         ResultSet resultSet = totalValue.executeQuery();
         //Sacar resultado del ResultSet
         int posicion=0;
         while (resultSet.next()){
             int codigo = resultSet.getInt(posicion);
-            
         }
         resultSet.close();
         return 0;
