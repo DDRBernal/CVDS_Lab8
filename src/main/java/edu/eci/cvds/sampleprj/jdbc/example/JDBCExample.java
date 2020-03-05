@@ -147,11 +147,13 @@ public class JDBCExample {
         ResultSet resultSet = totalValue.executeQuery();
         //Sacar resultado del ResultSet
         int posicion=0;
+        int suma = 0;
         while (resultSet.next()){
             int codigo = resultSet.getInt(posicion);
+            
         }
         resultSet.close();
-        return 0;
+        return suma;
     }
     
 
