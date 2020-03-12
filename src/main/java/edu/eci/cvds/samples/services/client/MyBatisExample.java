@@ -64,15 +64,10 @@ public class MyBatisExample {
 
         
         //Crear el mapper y usarlo: 
-        ClienteMapper cm=sqlss.getMapper(ClienteMapper.class)
+        //ClienteMapper cm=sqlss.getMapper(ClienteMapper.class)
         //cm...
-		System.out.println("--------------Consultar Clientes---------------");
-        System.out.println(cm.consultarClientes());
-        System.out.println("--------------Consultar Cliente---------");
-        System.out.println(cm.consultarCliente(2)); 
-		cm.agregarItemRentadoACliente(2,8 ,new SimpleDateFormat("yyyy/MM/dd").parse("2019/09/28"),new SimpleDateFormat("yyyy/MM/dd").parse("2020/03/11"));
-		ItemMapper im=sqlss.getMapper(ItemMapper.class);
-		
+        
+        
         
         sqlss.commit();
         
