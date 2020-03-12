@@ -1,7 +1,9 @@
 package edu.eci.cvds.sampleprj.dao;
 
 import edu.eci.cvds.samples.entities.Cliente;
-import edu.eci.cvds.samples.entities.Item;
+
+
+import java.util.List;
 
 
 public interface ClienteDAO {
@@ -11,5 +13,7 @@ public interface ClienteDAO {
    public Cliente consultarCliente(long documento);
 
    public void modificarCliente(Cliente cliente);
+
+   public List<Cliente> consultarCliente();
 
 }
