@@ -163,4 +163,14 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
          throw new ExcepcionServiciosAlquiler("Error al encontrar cliente"+docu,ex);
       }
    }
+
+   @Override
+   public List<Item> consultarItems() throws ExcepcionServiciosAlquiler {
+      return null;
+   }
+
+   @Override
+   public void registrarTipoItem(TipoItem it) throws ExcepcionServiciosAlquiler {
+
+   }
 }

@@ -4,7 +4,6 @@ import edu.eci.cvds.samples.entities.Cliente;
 import edu.eci.cvds.samples.entities.Item;
 import edu.eci.cvds.samples.entities.ItemRentado;
 import edu.eci.cvds.samples.entities.TipoItem;
-
 import edu.eci.cvds.samples.services.Exception.ExcepcionServiciosAlquiler;
 import edu.eci.cvds.samples.services.ServiciosAlquiler;
 
@@ -18,7 +17,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-public abstract class ServiciosAlquilerItemsStub implements ServiciosAlquiler {
+public class ServiciosAlquilerItemsStub implements ServiciosAlquiler {
 
     private static final int MULTA_DIARIA=5000;
     private final static long MILLISECONDS_IN_DAY = 24 * 60 * 60 * 1000;
@@ -74,6 +73,16 @@ public abstract class ServiciosAlquilerItemsStub implements ServiciosAlquiler {
             c.setVetado(estado);
         }
         else{throw new ExcepcionServiciosAlquiler("Cliente no registrado:"+docu);}
+    }
+
+    @Override
+    public List<Item> consultarItems() throws ExcepcionServiciosAlquiler {
+        return null;
+    }
+
+    @Override
+    public void registrarTipoItem(TipoItem it) throws ExcepcionServiciosAlquiler {
+
     }
 
     @Override
