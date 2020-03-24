@@ -108,7 +108,7 @@ public class JDBCExample {
         String consulta = "select nombre from ORD_PRODUCTOS where codigo = ? ";
         namesProducts = con.prepareStatement(consulta);
         //asignar parámetros
-        namesProducts.setInt(codigoPedido,codigo);
+        namesProducts.setInt(1,codigoPedido);
         //namesProducts.execute();
         //usar executeQuery
         //Sacar resultados del ResultSet
@@ -131,7 +131,7 @@ public class JDBCExample {
      * @param codigoPedido código del pedido cuyo total se calculará
      * @return el costo total del pedido (suma de: cantidades*precios)
      */
-    public static int valorTotalPedido(Connection con, int codigoPedido){
+    public static int valorTotalPedido(Connection con, int codigoPedido) throws SQLException {
         
         //Crear prepared statement
         PreparedStatement totalValue = null;
@@ -141,7 +141,7 @@ public class JDBCExample {
         String consulta2 = null;
         consulta2= "select ORD_DETALLES_PEDIDO.cantidad from ORD_DETALLES_PEDIDO inner join ODR_PRODUCTOS where codigo= ? ";
         //asignar parámetros
-        totalValue.setInt(codigoPedido,codigo);
+        totalValue.setInt(1,codigoPedido);
         
         //usar executeQuery
         ResultSet resultSet = totalValue.executeQuery();

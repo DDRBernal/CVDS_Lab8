@@ -32,5 +32,11 @@ public interface ClienteMapper {
      * @return 
      */
     public List<Cliente> consultarClientes();
-    
+
+    public void addCliente(@Param("cliente")Cliente cliente);
+
+
+    /*@nekakill*/
+
+    public void setVetado(@Param("clienteid")long id,@Param("estado") int estado);
 }

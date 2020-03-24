@@ -10,7 +10,10 @@ import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper;
 import edu.eci.cvds.samples.entities.Item;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper;
 import edu.eci.cvds.samples.entities.TipoItem;
+
+import java.sql.Date;
 import java.sql.SQLException;
+import java.util.List;
 
 public class MyBATISItemDAO implements ItemDAO{
 
@@ -40,4 +43,24 @@ public class MyBATISItemDAO implements ItemDAO{
 
   }
 
+  @Override
+  public List<Item> loadItemsAvailable() throws PersistenceException {
+    return null;
   }
+
+  @Override
+  public Long loadMultaAlquiler(int iditem, Date fechaDevolucion) throws PersistenceException {
+    return null;
+  }
+
+  @Override
+  public long loadCosto(int iditem, int numdias) {
+    return itemMapper.consultarCostoTarifa(iditem,numdias);
+  }
+
+  @Override
+  public void actualizarTarifaItem(int id, long tarifa) throws PersistenceException {
+    itemMapper.actualizarTarifa(id,tarifa);
+  }
+
+}

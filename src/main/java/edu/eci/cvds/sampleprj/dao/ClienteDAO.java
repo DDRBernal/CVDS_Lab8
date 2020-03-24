@@ -1,19 +1,24 @@
 package edu.eci.cvds.sampleprj.dao;
 
 import edu.eci.cvds.samples.entities.Cliente;
+import edu.eci.cvds.samples.entities.Item;
 
 
+import java.sql.Date;
 import java.util.List;
 
 
 public interface ClienteDAO {
 
-   public void regitrarCliente(Cliente cliente);
+   void regitrarCliente(Cliente cliente) throws PersistenceException;
 
-   public Cliente consultarCliente(long documento);
+   Cliente consultarCliente(long documento) throws PersistenceException;
 
-   public void modificarCliente(Cliente cliente);
+   Cliente ConsultarCliente(long idcliente) throws PersistenceException;
 
-   public List<Cliente> consultarCliente();
+   List<Cliente> consultarClientes() throws PersistenceException;
 
+   void regitrarCliente(Date date, long docu, Item item, int numdias) throws PersistenceException;
+
+   void vetarCliente(long docu, boolean estado) throws PersistenceException;
 }
